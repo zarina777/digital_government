@@ -50,3 +50,26 @@ bar.addEventListener("click", () => {
   if (icon.classList.contains("fa-bars")) responsive_navbar.style.left = "100%";
   if (icon.classList.contains("fa-x")) responsive_navbar.style.left = "0";
 });
+
+// const switch_1 = document.getElementById("place_btn");
+// const switch_2 = document.querySelector("#index_btn");
+// console.log(switch_1);
+// console.log(switch_2);
+
+// switch_1.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   console.log("first");
+//   if (!switch_1.classList.contains("active")) {
+//     switch_1.classList.add("active");
+//     switch_2.classList.remove("active");
+//   }
+// });
+
+// switch_2.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   console.log("senc");
+//   if (!switch_2.classList.contains("active")) {
+//     switch_2.classList.add("active");
+//     switch_1.classList.remove("active");
+//   }
+// });
