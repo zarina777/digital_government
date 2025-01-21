@@ -27,3 +27,13 @@ a {
 nav a.active {
   color: vars.$blue;
 }
+
+// Footer styles
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1rem;
+}

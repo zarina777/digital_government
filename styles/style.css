@@ -30,6 +30,15 @@ nav a.active {
   color: #0094cb;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
 .wrap {
   display: flex;
   max-width: 1400px;
@@ -501,6 +510,182 @@ nav a.active {
   text-transform: uppercase;
   color: #0094cb;
   margin-bottom: 0.5rem;
+}
+#home .section-5 h2 {
+  text-transform: uppercase;
+  color: #0094cb;
+  margin-bottom: 0.5rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 1000px) {
+  #home .section-5 h2 {
+    padding: 2rem;
+  }
+}
+#home .section-5 .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+@media (max-width: 1250px) {
+  #home .section-5 .cards {
+    gap: 1rem;
+  }
+}
+@media (max-width: 1150px) {
+  #home .section-5 .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  #home .section-5 .cards {
+    padding: 2rem;
+  }
+}
+@media (max-width: 850px) {
+  #home .section-5 .cards {
+    grid-template-columns: 1fr;
+  }
+}
+#home .section-5 .cards .card {
+  display: flex;
+  flex-direction: column;
+  cursor: alias;
+}
+#home .section-5 .cards .card:hover .image {
+  position: relative;
+}
+#home .section-5 .cards .card:hover .image::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4470588235);
+  transition: background 0.5s;
+}
+#home .section-5 .cards .card .image {
+  border-radius: 23px;
+  overflow: hidden;
+}
+#home .section-5 .cards .card .image img {
+  width: 100%;
+}
+#home .section-5 .cards .card .info_card {
+  border-radius: 23px;
+  background: #fff;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1607843137);
+  padding: 1.3rem;
+  transform: translateY(-40px);
+  overflow: hidden;
+}
+#home .section-5 .cards .card .info_card .head_info_card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+#home .section-5 .cards .card .info_card .head_info_card .square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #7e7e7e;
+  padding: 0.3rem 0.8rem;
+}
+#home .section-5 .cards .card .info_card .head_info_card .square span:first-child {
+  color: #7e7e7e;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+#home .section-5 .cards .card .info_card .body_info_card {
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+#home .section-5 .cards .card .info_card .footer_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home .section-5 .cards .card .info_card .footer_card span:nth-child(2) {
+  color: #013e8d;
+  text-transform: uppercase;
+}
+#home .section-6 {
+  background: url("../images/section6.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+@media (max-width: 750px) {
+  #home .section-6 {
+    position: relative;
+  }
+}
+#home .section-6 ul {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+}
+@media (max-width: 750px) {
+  #home .section-6 ul {
+    display: none;
+  }
+}
+#home .section-6 ul li {
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20vh;
+  color: #0094cb;
+}
+#home .section-6 ul li span {
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+@media (max-width: 1200px) {
+  #home .section-6 ul li span {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 1000px) {
+  #home .section-6 ul li span {
+    font-size: 2rem;
+  }
+}
+#home .section-6 ul li p {
+  font-size: 1.3rem;
+}
+@media (max-width: 1200px) {
+  #home .section-6 ul li p {
+    font-size: 1rem;
+  }
+}
+#home .section-6 .logo_lext {
+  transform: translateY(-100px);
+  margin-left: 100px;
+  text-transform: uppercase;
+}
+@media (max-width: 750px) {
+  #home .section-6 .logo_lext {
+    margin-left: 0;
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+#home .section-6 .logo_lext h3:nth-child(1) {
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=style.css.map */
