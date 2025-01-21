@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <title>Цифровое правительство</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="sidebar">
+        <div class="sidebar_contain">
+          <div class="logo">
+            <a href="#home">
+              <img src="./images/logo.png" alt="" />
+            </a>
+          </div>
+          <ul>
+            <a href="">
+              <li>
+                <i class="fa-brands fa-youtube"></i>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <i class="fa-brands fa-facebook"></i>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <i class="fa-brands fa-instagram"></i>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <i class="fa-brands fa-twitter"></i>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <i class="fa-brands fa-telegram"></i>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="navbar">
+          <div class="logo_wrap">
+            <div class="logo">
+              <a href="#home">
+                <img src="./images/logo.png" alt="" />
+              </a>
+            </div>
+            <div class="logo_lext">
+              <h3>ЦифровоЕ правительствО</h3>
+              <h3>Республики Узбекистан</h3>
+            </div>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#home" id="home-link">Главная</a></li>
+              <li><a href="#solution" id="about-link">Решения</a></li>
+              <li><a href="#rating" id="rating-link">Рейтинги</a></li>
+              <li><a href="#benefit" id="benefit-link">Полезное</a></li>
+            </ul>
+            <select>
+              <option to="ru">RU</option>
+              <option to="uz">UZ</option>
+              <option to="uz">EN</option>
+            </select>
+          </nav>
+          <!-- BAR open and close -->
+          <div id="bar" class="d-none">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+        <div id="app">Loading...</div>
+      </div>
+    </div>
+
+    <!-- NAVBAR BAR FOR RESPONSIVENESS -->
+    <div class="responsive_navbar">
+      <div class="languages">
+        <button>UZ</button>
+        <button>RU</button>
+        <button>EN</button>
+      </div>
+      <ul class="routes">
+        <a href="#home" id="home-link_"><li>Главная</li></a>
+        <a href="#solution" id="about-link_"><li>Решения</li></a>
+        <a href="#rating" id="rating-link_"> <li>Рейтинги</li></a>
+        <a href="#benefit" id="benefit-link_"><li>Полезное</li></a>
+      </ul>
+      <ul class="socials">
+        <a href="">
+          <li>
+            <i class="fa-brands fa-youtube"></i>
+          </li>
+        </a>
+        <a href="">
+          <li>
+            <i class="fa-brands fa-facebook"></i>
+          </li>
+        </a>
+        <a href="">
+          <li>
+            <i class="fa-brands fa-instagram"></i>
+          </li>
+        </a>
+        <a href="">
+          <li>
+            <i class="fa-brands fa-twitter"></i>
+          </li>
+        </a>
+        <a href="">
+          <li>
+            <i class="fa-brands fa-telegram"></i>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <script src="./scripts/app.js"></script>
+  </body>
+</html>

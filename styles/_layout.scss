@@ -1,0 +1,239 @@
+@use "variables" as vars;
+
+.wrap {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 0 0;
+  @media (max-width: 1000px) {
+    padding: 0;
+  }
+  .content {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    height: 100vh;
+    flex: 1;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: vars.$primary-color;
+      height: 5rem;
+      position: sticky;
+      z-index: 100;
+      top: 0;
+      background-color: #fff;
+      @media (max-width: 1000px) {
+        padding: 0 1rem 0 0;
+      }
+      .logo_wrap {
+        display: flex;
+        padding: 0.5rem;
+        gap: 2.3rem;
+        @media (max-width: 1000px) {
+          gap: 1rem;
+        }
+        .logo {
+          display: none;
+          max-width: 4rem;
+          max-height: 4rem;
+          @media (max-width: 1000px) {
+            display: block;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        .logo_lext {
+          text-transform: uppercase;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h3 {
+            font-size: 0.9rem;
+            &:first-child {
+              font-weight: 400;
+            }
+            &:last-child {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        @media (max-width: 1000px) {
+          display: none;
+        }
+        a.active {
+          font-weight: bold;
+          color: vars.$blue;
+        }
+        ul {
+          display: flex;
+          gap: 1.25rem;
+          a {
+            color: vars.$primary-color;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: 400;
+            text-align: center;
+          }
+        }
+        select {
+          outline: none;
+          border: none;
+          font-size: 1.2rem;
+        }
+      }
+      #bar {
+        background: vars.$blue;
+        color: white;
+        padding: 9px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: none;
+        @media (max-width: 1000px) {
+          display: block;
+        }
+      }
+    }
+  }
+  #sidebar {
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width: 1000px) {
+      display: none;
+    }
+    .sidebar_contain {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        max-width: 4rem;
+        max-height: 4.1rem;
+        padding: 1rem;
+        box-sizing: content-box;
+        img {
+          width: 100%;
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        a {
+          text-decoration: none;
+          li {
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.416);
+            width: 2.5rem;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.5s;
+            i {
+              color: #fff;
+            }
+            &:hover {
+              i {
+                color: rgba(0, 0, 0, 0.416);
+              }
+              background: transparent;
+              border: 1px solid rgba(0, 0, 0, 0.416);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.responsive_navbar {
+  position: fixed;
+  flex-direction: column;
+  gap: 10px;
+  top: 5rem;
+  left: 100%;
+  display: none;
+  height: calc(100vh - 5rem);
+  width: 100%;
+  background-color: #fff;
+  padding: 2rem 1rem;
+  transition: left 0.5s;
+  @media (max-width: 1000px) {
+    display: block;
+  }
+  .languages {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    button {
+      padding: 10px 1.3rem;
+      border: 1px solid vars.$blue;
+      outline: none;
+      border-radius: 10px;
+      color: vars.$blue;
+      background-color: #fff;
+      font-size: 1.2rem;
+      &:nth-child(2) {
+        background: vars.$blue;
+        color: #fff;
+      }
+    }
+  }
+  .routes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    a {
+      li {
+        padding: 1rem;
+        border-bottom: 1px solid #3333335a;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+
+        color: vars.$primary-color;
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+      &.active {
+        li {
+          color: vars.$blue;
+        }
+      }
+    }
+  }
+  .socials {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    a {
+      max-width: 3rem;
+      aspect-ratio: 1/1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      border-radius: 50%;
+      background: linear-gradient(90deg, #0094cb -19.55%, #96dccb 100%);
+      li {
+        font-size: 1.5rem;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

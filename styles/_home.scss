@@ -1,0 +1,223 @@
+@use "variables" as vars;
+#home {
+  section:not(section:last-child) {
+    margin-bottom: 100px;
+  }
+  .section-1 {
+    display: flex;
+    height: 80vh;
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    gap: 5px;
+    .left {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 30px;
+      padding: 3rem;
+      @media (max-width: 1000px) {
+        display: none;
+      }
+      img {
+        max-width: 106px;
+        width: 100%;
+      }
+      p {
+        font-size: 1.9rem;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+    .right {
+      height: 100%;
+      flex: 2;
+      overflow: hidden;
+      position: relative;
+      @media (max-width: 1000px) {
+        flex: 1;
+        display: flex;
+        width: 100%;
+      }
+      .information {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        max-width: 50%;
+        color: #fff;
+        h1 {
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+          font-size: 2rem;
+        }
+      }
+      video {
+        @media (max-width: 1000px) {
+          height: 100%;
+        }
+      }
+    }
+  }
+  .section-2 {
+    h2 {
+      @each $property, $value in vars.$heading {
+        #{$property}: $value;
+      }
+      @media (max-width: 1000px) {
+        padding: 0 1rem;
+      }
+    }
+    .paragraph {
+      color: vars.$primary-color;
+      margin-bottom: 2rem;
+      @media (max-width: 1000px) {
+        padding: 0 1rem;
+      }
+    }
+    .wraping {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @media (max-width: 1000px) {
+        padding: 1rem;
+      }
+      li {
+        width: 33%;
+        border: 1px solid rgba(0, 0, 0, 0.116);
+        padding: 1.2rem;
+        display: flex;
+        @media (max-width: 1000px) {
+          width: 50%;
+        }
+        @media (max-width: 600px) {
+          width: 100%;
+        }
+        img {
+          align-self: flex-end;
+          cursor: pointer;
+        }
+        p {
+          font-size: 1.4rem;
+          color: vars.$primary-color;
+          font-weight: 600;
+          line-height: 150%;
+          margin-bottom: 1.5rem;
+          @media (max-width: 900px) {
+            font-size: 1.2rem;
+          }
+          @media (max-width: 600px) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .section-3 {
+    position: relative;
+
+    @media (max-width: 1000px) {
+      padding: 0 20px;
+    }
+    .img {
+      position: absolute;
+      top: -200px;
+      right: -100px;
+      z-index: -1;
+
+      img {
+        width: 600px;
+      }
+      @media (max-width: 600px) {
+        top: 0;
+        left: 0;
+        width: 300px;
+      }
+    }
+    .wrap_info {
+      max-width: 900px;
+      .heading_section-3 {
+        text-align: end;
+        margin-bottom: 3rem;
+        h2 {
+          @each $property, $value in vars.$heading {
+            #{$property}: $value;
+          }
+        }
+      }
+
+      //TIMELINE BEGIN
+      .timeline-container {
+        display: flex;
+        background-image: url("../images/contur.png");
+        background-size: 100% 300px;
+        background-repeat: no-repeat;
+        // height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 98px;
+        @media (max-width: 600px) {
+          border-top: 2px dashed vars.$blue;
+          background-image: none;
+          flex-wrap: nowrap;
+          overflow-x: scroll;
+          scrollbar-width: none;
+          gap: 1.5rem;
+        }
+        .timeline-item {
+          text-align: center;
+          min-height: 200px;
+
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3) {
+            width: 33%;
+          }
+          &:nth-child(4),
+          &:nth-child(5),
+          &:nth-child(6),
+          &:nth-child(7) {
+            width: 25%;
+          }
+
+          .content-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            .circle {
+              width: 1rem;
+              aspect-ratio: 1/1;
+              background: linear-gradient(270deg, #0094cb 31.94%, #4acf78 51.41%, #0094cb 59.48%);
+              border: 1px solid #333;
+              border-radius: 50%;
+            }
+            .year {
+              color: vars.$blue;
+              font-size: large;
+            }
+            .description {
+              font-size: 1rem;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+      //TIMELINE ENDI
+    }
+  }
+  .section-4 {
+    .info_part {
+      .heading_section-3 {
+        text-align: end;
+        margin-bottom: 3rem;
+        h2 {
+          @each $property, $value in vars.$heading {
+            #{$property}: $value;
+          }
+        }
+      }
+      .chart {
+      }
+    }
+  }
+}

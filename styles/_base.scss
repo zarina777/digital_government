@@ -1,0 +1,29 @@
+@use "variables" as vars;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Montserrat", serif;
+}
+body {
+  overflow-y: hidden;
+}
+ul li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 1.5rem;
+  margin: 0 auto;
+}
+nav a.active {
+  color: vars.$blue;
+}
