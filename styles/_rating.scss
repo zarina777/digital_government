@@ -1,0 +1,92 @@
+@use "variables" as vars;
+#rating {
+  @media (max-width: 1000px) {
+    padding: 0 1rem;
+  }
+  .info {
+    h2 {
+      font-size: 2.3rem;
+      color: vars.$blue;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      line-height: 150%;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    margin-bottom: 50px;
+    @media (max-width: 540px) {
+      justify-content: center;
+    }
+    li {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      @media (max-width: 780px) {
+        width: 48%;
+      }
+      @media (max-width: 540px) {
+        width: 80%;
+      }
+      span {
+        background: linear-gradient(90deg, #0094cb -19.55%, #96dccb 100%);
+        font-size: 3rem;
+        font-weight: 800;
+        color: #fff;
+        max-width: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+      }
+      p {
+        font-weight: 600;
+      }
+    }
+  }
+  h2 {
+    font-size: 2.3rem;
+    color: vars.$blue;
+    margin-bottom: 1.5rem;
+  }
+  .line_chart_wrap {
+    margin-bottom: 100px;
+    .Button_switch {
+      background-color: #e1f7ff;
+      border-radius: 30px;
+      display: flex;
+      padding: 5px;
+      max-width: 300px;
+      width: 100%;
+      button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: 14px 20px;
+        border-radius: 30px;
+        color: vars.$blue;
+        &:nth-child(2) {
+          flex: 1;
+        }
+        &:first-child {
+          padding: 14px 25px;
+        }
+      }
+      button.active {
+        background: vars.$blue;
+        color: #fff;
+      }
+    }
+  }
+}

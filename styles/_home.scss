@@ -206,9 +206,16 @@
     }
   }
   .section-4 {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+    @media (max-width: 1000px) {
+      padding: 1rem;
+    }
     .info_part {
+      max-width: 1000px;
+      width: 100%;
       .heading_section-3 {
-        text-align: end;
         margin-bottom: 3rem;
         h2 {
           @each $property, $value in vars.$heading {
@@ -217,6 +224,87 @@
         }
       }
       .chart {
+        .img {
+          margin-bottom: 100px;
+          @media (max-width: 1000px) {
+            overflow-x: scroll;
+            // scrollbar-width: none;
+          }
+        }
+        .timeline {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+          @media (max-width: 1000px) {
+            overflow-x: scroll;
+            scrollbar-width: none;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            border: 1px solid #00b4d8;
+            z-index: 0;
+          }
+          .step {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+            .circle {
+              width: 16px;
+              height: 16px;
+              border: 2px solid #00b4d8;
+              background-color: white;
+              border-radius: 5%;
+              margin-bottom: 15px;
+            }
+
+            .step-content {
+              display: flex;
+              flex-direction: column;
+
+              .step-header {
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 1rem;
+                flex-direction: column;
+                .rounded-box {
+                  background: linear-gradient(90deg, #0094cb -19.55%, #96dccb 100%);
+                  color: #ffffff;
+                  padding: 5px 10px;
+                  border-radius: 10px 0 0 10px;
+                  font-size: 1.3rem;
+                  align-self: flex-start;
+                }
+                .arrow {
+                  font-size: 1.5rem;
+                  color: #00b4d8;
+                  border: 2px solid #00b4d8;
+                  width: 50px;
+                  font-weight: 600;
+                  aspect-ratio: 1/1;
+                  border-radius: 50%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+
+              .step-text {
+                font-size: 1rem;
+                color: #000000;
+                max-width: 258px;
+                @media (max-width: 600px) {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -287,6 +375,9 @@
             align-items: center;
             margin-bottom: 1rem;
             gap: 1rem;
+            h3 {
+              font-size: 17px;
+            }
             .square {
               display: flex;
               flex-direction: column;
