@@ -1,3 +1,26 @@
+// Toggle navbar
+const bar = document.getElementById("bar");
+const icon = document.querySelector("#bar i");
+const responsive_navbar = document.querySelector(".responsive_navbar");
+const resnavLinks = document.querySelectorAll(".routes a");
+resnavLinks.forEach((el) => {
+  el.addEventListener("click", (event) => {
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-x");
+    if (icon.classList.contains("fa-bars")) {
+      responsive_navbar.style.left = "100%";
+    }
+    if (icon.classList.contains("fa-x")) {
+      responsive_navbar.style.left = "0";
+    }
+  });
+});
+bar.addEventListener("click", () => {
+  icon.classList.toggle("fa-bars");
+  icon.classList.toggle("fa-x");
+  if (icon.classList.contains("fa-bars")) responsive_navbar.style.left = "100%";
+  if (icon.classList.contains("fa-x")) responsive_navbar.style.left = "0";
+});
 //Routing
 async function renderRoute() {
   const hash = location.hash || "#home";
@@ -5,7 +28,6 @@ async function renderRoute() {
   const app = document.getElementById("app");
   const navLinks = document.querySelectorAll("nav a");
   const resnavLinks = document.querySelectorAll(".routes a");
-
   try {
     const response = await fetch(`./pages/${route}.html`);
     if (response.ok) {
@@ -202,14 +224,3 @@ window.addEventListener("hashchange", renderRoute);
 
 // Initial render
 renderRoute();
-
-// Toggle navbar
-const bar = document.getElementById("bar");
-const icon = document.querySelector("#bar i");
-const responsive_navbar = document.querySelector(".responsive_navbar");
-bar.addEventListener("click", () => {
-  icon.classList.toggle("fa-bars");
-  icon.classList.toggle("fa-x");
-  if (icon.classList.contains("fa-bars")) responsive_navbar.style.left = "100%";
-  if (icon.classList.contains("fa-x")) responsive_navbar.style.left = "0";
-});
