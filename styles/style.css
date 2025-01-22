@@ -1047,7 +1047,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 #rating .line_chart_wrap .country_name span:first-child {
   width: 14px;

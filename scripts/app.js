@@ -88,7 +88,7 @@ function initializePageScripts(route) {
 
     // Initial data for the chart
     const initialLabels = [2018, 2019, 2020, 2021, 2022];
-    const initialData = [32000, 35000, 27275, 39000, 31000];
+    const initialData = [30000, 20000, 35000, 27275, 39000, 31000];
 
     function initializeChart(labels, dataValues, label) {
       const ctx = document.getElementById("myChart").getContext("2d");
@@ -133,14 +133,6 @@ function initializePageScripts(route) {
               grid: {
                 display: false, // Hide gridlines on x-axis
               },
-              title: {
-                display: true,
-                text: "Year",
-                font: {
-                  size: 14,
-                  weight: "bold",
-                },
-              },
             },
             y: {
               min: 10000,
@@ -149,14 +141,6 @@ function initializePageScripts(route) {
                 stepSize: 10000, // Increment by 10K
                 callback: function (value) {
                   return `${(value / 1000).toFixed(0)}K`;
-                },
-              },
-              title: {
-                display: true,
-                text: "Index Value",
-                font: {
-                  size: 14,
-                  weight: "bold",
                 },
               },
             },
