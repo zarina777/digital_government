@@ -982,6 +982,7 @@ footer {
 }
 #rating .line_chart_wrap {
   margin-bottom: 100px;
+  max-width: 1200px;
 }
 #rating .line_chart_wrap .Button_switch {
   background-color: #e1f7ff;
@@ -998,6 +999,7 @@ footer {
   padding: 14px 20px;
   border-radius: 30px;
   color: #0094cb;
+  cursor: pointer;
 }
 #rating .line_chart_wrap .Button_switch button:nth-child(2) {
   flex: 1;
@@ -1008,6 +1010,49 @@ footer {
 #rating .line_chart_wrap .Button_switch button.active {
   background: #0094cb;
   color: #fff;
+}
+#rating .line_chart_wrap .line_chart #chart-container {
+  height: 350px;
+  max-width: 1500px;
+  margin: auto;
+  padding-top: 50px;
+}
+#rating .line_chart_wrap .country_name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+#rating .line_chart_wrap .country_name span:first-child {
+  width: 14px;
+  aspect-ratio: 1/1;
+  background: #0094cb;
+  border-radius: 4px;
+}
+#rating .line_chart_wrap .country_name span:last-child {
+  color: #64748b;
+}
+#rating .line_chart_wrap .button-container {
+  margin-top: 20px;
+}
+#rating .line_chart_wrap .button-container .filter-btn {
+  background: #effaff;
+  padding: 14px 25px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: #0094cb;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+#rating .line_chart_wrap .button-container .active {
+  background-color: #0094cb;
+  color: white;
+}
+#rating .line_chart_wrap .button-container .filter-btn:hover {
+  background-color: #0056b3;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

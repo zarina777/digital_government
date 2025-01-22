@@ -3,37 +3,187 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Line Chart</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   <body>
-	
-	<div>
-  <canvas id="myChart"></canvas>
-</div>
-   </body>
-    <script>
-      const ctx = document.getElementById("myChart");
+    <title>Line Chart</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
 
-      new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-          datasets: [
-            {
-              label: "# of Votes",
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 1,
+      #chart-container {
+        width: 90%; /* You can adjust the percentage to make it wider */
+        max-width: 2000px; /* Max width of the chart */
+        height: 500px;
+        max-width: 700px;
+        margin: auto;
+        padding-top: 50px;
+      }
+
+      .button-container {
+        margin-top: 20px;
+      }
+
+      .filter-btn {
+        padding: 10px 20px;
+        border: 1px solid #007bff;
+        border-radius: 20px;
+        background-color: white;
+        color: #007bff;
+        cursor: pointer;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn.active {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .filter-btn:hover {
+        background-color: #0056b3;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <div class="button-container">
+      <button class="filter-btn active" onclick="updateChart('CIS')">Страны СНГ</button>
+      <button class="filter-btn" onclick="updateChart('BRICS')">Страны Брикс</button>
+      <button class="filter-btn" onclick="updateChart('G8')">Страны G8</button>
+    </div>
+
+    <script>
+      let chartInstance = null; // Store the chart instance globally
+
+      // Initial data for the chart
+      const initialLabels = [2018, 2019, 2020, 2021, 2022];
+      const initialData = [32000, 35000, 27275, 39000, 31000];
+
+      function initializeChart(labels, dataValues, label) {
+        const ctx = document.getElementById("myChart").getContext("2d");
+
+        // Create the chart instance
+        chartInstance = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: label,
+                data: dataValues,
+                borderColor: "#007bff", // Line color
+                borderWidth: 2,
+                pointBackgroundColor: "#007bff", // Circle point color
+                pointBorderColor: "#ffffff", // Circle point border color
+                pointBorderWidth: 2,
+                pointRadius: 5, // Size of points
+                tension: 0.4, // Smooth curve
+                fill: false, // No background fill
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false, // Ensures height consistency
+            plugins: {
+              legend: {
+                display: false, // Hides the legend
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (tooltipItem) {
+                    return `${tooltipItem.dataset.label}: ${tooltipItem.raw.toLocaleString()}K`;
+                  },
+                },
+              },
             },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
+            scales: {
+              x: {
+                grid: {
+                  display: false, // Hide gridlines on x-axis
+                },
+                title: {
+                  display: true,
+                  text: "Year",
+                  font: {
+                    size: 14,
+                    weight: "bold",
+                  },
+                },
+              },
+              y: {
+                min: 10000,
+                max: 50000,
+                ticks: {
+                  stepSize: 10000, // Increment by 10K
+                  callback: function (value) {
+                    return `${(value / 1000).toFixed(0)}K`;
+                  },
+                },
+                title: {
+                  display: true,
+                  text: "Index Value",
+                  font: {
+                    size: 14,
+                    weight: "bold",
+                  },
+                },
+              },
             },
           },
-        },
-      });
+        });
+      }
+
+      function updateChart(region) {
+        const buttons = document.querySelectorAll(".filter-btn");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+
+        const activeButton = Array.from(buttons).find((btn) => btn.innerHTML === region);
+        if (activeButton) activeButton.classList.add("active");
+
+        let labels, data, label;
+        switch (region) {
+          case "CIS":
+            labels = [2018, 2019, 2020, 2021, 2022];
+            data = [32000, 35000, 27275, 39000, 31000];
+            label = "CIS Countries";
+            break;
+          case "BRICS":
+            labels = [2018, 2019, 2020, 2021, 2022];
+            data = [30000, 32000, 28000, 40000, 32000];
+            label = "BRICS Countries";
+            break;
+          case "G8":
+            labels = [2018, 2019, 2020, 2021, 2022];
+            data = [34000, 37000, 29000, 41000, 33000];
+            label = "G8 Countries";
+            break;
+          default:
+            labels = initialLabels;
+            data = initialData;
+            label = "Uzbekistan";
+        }
+
+        if (chartInstance) {
+          // Update chart data instead of re-creating it
+          chartInstance.data.labels = labels;
+          chartInstance.data.datasets[0].data = data;
+          chartInstance.data.datasets[0].label = label;
+          chartInstance.update();
+        } else {
+          initializeChart(labels, data, label); // Create chart if it doesn't exist
+        }
+      }
+
+      // Initialize the chart with the default dataset
+      initializeChart(initialLabels, initialData, "Uzbekistan");
     </script>
   </body>
 </html>
