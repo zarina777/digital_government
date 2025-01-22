@@ -142,37 +142,23 @@ function initializePageScripts(route) {
         },
       });
     }
-    const buttons = document.getElementsByClassName("filter-btn");
 
     document.getElementById("CIS").addEventListener("click", () => {
       updateChart("CIS");
-      buttons.forEach((btn) => btn.classList.remove("active"));
-
-      const activeButton = Array.from(buttons).find((btn) => btn.innerHTML === "CIS");
-      if (activeButton) activeButton.classList.add("active");
     });
     document.getElementById("BRICS").addEventListener("click", () => {
       updateChart("BRICS");
-      buttons.forEach((btn) => btn.classList.remove("active"));
-
-      const activeButton = Array.from(buttons).find((btn) => btn.innerHTML === "BRICS");
-      if (activeButton) activeButton.classList.add("active");
     });
     document.getElementById("G8").addEventListener("click", () => {
       updateChart("G8");
-      buttons.forEach((btn) => btn.classList.remove("active"));
-
-      const activeButton = Array.from(buttons).find((btn) => btn.innerHTML === "G8");
-      if (activeButton) activeButton.classList.add("active");
     });
     function updateChart(region) {
       const buttons = document.querySelectorAll(".filter-btn");
+
       buttons.forEach((btn) => btn.classList.remove("active"));
-      console.log(buttons);
 
-      const activeButton = Array.from(buttons).find((btn) => btn.innerHTML === region);
+      const activeButton = document.getElementById(region);
       if (activeButton) activeButton.classList.add("active");
-
       let labels, data, label;
       switch (region) {
         case "CIS":
@@ -203,7 +189,7 @@ function initializePageScripts(route) {
         chartInstance.data.datasets[0].label = label;
         chartInstance.update();
       } else {
-        initializeChart(labels, data, label); // Create chart if it doesn't exist
+        initializeChart(labels, data, label);
       }
     }
 
