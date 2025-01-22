@@ -1032,10 +1032,13 @@ footer {
 #rating .line_chart_wrap .country_name span:last-child {
   color: #64748b;
 }
-#rating .line_chart_wrap .button-container {
-  margin-top: 20px;
+#rating .line_chart_wrap .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
 }
-#rating .line_chart_wrap .button-container .filter-btn {
+#rating .line_chart_wrap .controls .button-container .filter-btn {
   background: #effaff;
   padding: 14px 25px;
   outline: none;
@@ -1046,12 +1049,58 @@ footer {
   margin: 5px;
   transition: all 0.3s ease;
 }
-#rating .line_chart_wrap .button-container .active {
+#rating .line_chart_wrap .controls .button-container .active {
   background-color: #0094cb;
   color: white;
 }
-#rating .line_chart_wrap .button-container .filter-btn:hover {
+#rating .line_chart_wrap .controls .button-container .filter-btn:hover {
   background-color: #0056b3;
+  color: white;
+}
+#rating .line_chart_wrap .controls .form_input {
+  display: flex;
+  flex: 1;
+  gap: 15px;
+}
+#rating .line_chart_wrap .controls .form_input .input {
+  flex: 1;
+  width: 100%;
+  border: 1px solid #b2bbc6;
+  padding: 12px 10px;
+  border-radius: 12px;
+  width: 100%;
+}
+#rating .line_chart_wrap .controls .form_input .input input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+#rating .line_chart_wrap .controls .form_input .input input::placeholder {
+  color: #b2bbc6;
+}
+#rating .line_chart_wrap .controls .form_input button {
+  padding: 0 25px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#rating .line_chart_wrap .controls .form_input .first-btn {
+  background: #0094cb;
+  color: white;
+}
+#rating .line_chart_wrap .controls .form_input .first-btn:hover {
+  background: #effaff;
+  color: #0094cb;
+  border: 1px solid #0094cb;
+}
+#rating .line_chart_wrap .controls .form_input .next-btn {
+  background: #ffedec;
+  color: red;
+}
+#rating .line_chart_wrap .controls .form_input .next-btn:hover {
+  background: red;
   color: white;
 }
 
