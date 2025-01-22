@@ -142,7 +142,7 @@ function initializePageScripts(route) {
         },
       });
     }
-    const buttons = document.getElementsByClassName(".filter-btn");
+    const buttons = document.getElementsByClassName("filter-btn");
 
     document.getElementById("CIS").addEventListener("click", () => {
       updateChart("CIS");
